@@ -17,6 +17,7 @@
   "author": "wallax",
   "license": "Apache-2.0",
   "dependencies": {
-	  "callback2": "1.0.0"
+	  "callback2": "1.0.0",
+	  "next2": "1.0.1"
   }
 }
