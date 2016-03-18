@@ -1,0 +1,22 @@
+{
+  "name": "aliez",
+  "version": "1.0.0",
+  "description": "web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.coding.net/wallax/aliez.git"
+  },
+  "keywords": [
+    "web",
+    "server"
+  ],
+  "author": "wallax",
+  "license": "Apache-2.0",
+  "dependencies": {
+	  "callback2": "1.0.0"
+  }
+}
