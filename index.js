@@ -25,7 +25,26 @@ api = {
 	},
 	
 	handleRequest : function(req, res, rule){
-		
+		if('string' == typeof rule.handle){
+			
+		}
+	},
+	
+	parseRange : function(str){
+		var arr = str.split('-');
+		var res = {};
+		res.start = arr[0] == '' ? 0 : +arr[0];
+		if(arr[1] != '') res.end = +arr[1];
+		return res;
+	}
+	
+	sendFile : function(req, res, file){
+		var code = 200, headers, range, frs;
+		if(req.headers['range']){
+			range = api.parseRange(req.headers['range']);
+			code = 206;
+			frs = fs.createReadStream(file, range);
+		}
 	}
 };
 
