@@ -66,6 +66,9 @@ api = {
 					api.send.call(res, req, res, arguments[0]);
 				}
 			};
+			res.sendFile = function(s){
+				api.sendFile.call(res, req, res, s);
+			}
 			rule.handle.call(res, req, res);
 		}
 	},
@@ -255,6 +258,19 @@ Aliez.prototype.listen = function(port){
 		routes = this.routes;
 	server = http.createServer(function(req, res){
 		var rule = api.matchRoute(req, routes);
+		if(req.headers['host']){
+			if(hostname.length > 0){
+				if(hostname.indexOf(req.headers['host']) == -1){
+					res.end();
+					return;
+				}
+			}
+		}else{
+			if(hostname.length > 0){
+				res.end();
+				return;
+			}
+		}
 		if(rule){
 			var es = new EventEmitter();
 			var count = 0;

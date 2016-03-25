@@ -1,6 +1,6 @@
 {
   "name": "aliez",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "web server",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,5 @@
     "server"
   ],
   "author": "wallax",
-  "license": "Apache-2.0",
-  "dependencies": {
-	  "callback2": "1.0.0",
-	  "next2": "1.0.1"
-  }
+  "license": "Apache-2.0"
 }
