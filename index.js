@@ -155,10 +155,10 @@ api = {
 		}
 		if(req.headers['accept-encoding']){
 			if(req.headers['accept-encoding'].indexOf('gzip') != -1){
-				zip = zip.createGzip();
+				zip = zlib.createGzip();
 				headers['content-encoding'] = 'gzip';
 			}else if(req.headers['accept-encoding'].indexOf('deflate') != -1){
-				zip = zip.createDeflate();
+				zip = zlib.createDeflate();
 				headers['content-encoding'] = 'deflate';
 			}
 		}
