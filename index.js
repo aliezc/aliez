@@ -119,7 +119,7 @@ api = {
 			}
 		}
 		
-		headers['date'] = new Date().toLocaleString();
+		headers['date'] = escape(new Date().toLocaleString());
 		headers['server'] = 'Aliez 0.1.0';
 		res.writeHead(code, headers);
 		
@@ -163,7 +163,7 @@ api = {
 			}
 		}
 		
-		headers['date'] = new Date().toString();
+		headers['date'] = escape(new Date().toString());
 		headers['server'] = 'Aliez 0.1.0';
 		res.writeHead(code, headers);
 		
