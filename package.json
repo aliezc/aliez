@@ -1,6 +1,6 @@
 {
   "name": "aliez",
-  "version": "1.0.5",
+  "version": "2.1.12",
   "description": "web server",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "keywords": [
     "web",
-    "server"
+    "server",
+    "aliez",
+    "http"
   ],
   "author": "wallax",
   "license": "Apache-2.0"
