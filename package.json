@@ -1,6 +1,6 @@
 {
   "name": "aliez",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "description": "web server",
   "main": "index.js",
   "scripts": {
