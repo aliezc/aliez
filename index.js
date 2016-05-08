@@ -5,9 +5,10 @@ var http = require('http'),
 	EventEmitter = require('events');
 
 var midwares = [];
-var aliez = function(cb){
+
+module.exports = function(cb){
 	assert('function' == typeof cb, 'Invalid callback');
-	return function(req, res){
+	var aliez = function(req, res){
 		assert(req instanceof http.IncomingMessage &&
 			res instanceof http.ServerResponse,
 			'Invalid argument');
@@ -29,13 +30,13 @@ var aliez = function(cb){
 		}else{
 			e.emit('finish');
 		}
+	};
+	
+	aliez.use = function(cb){
+		assert('function' == typeof cb, 'Invalid midware');
+		midwares.push(cb);
+		return aliez;
 	}
-}
-
-aliez.use = function(cb){
-	assert('function' == typeof cb, 'Invalid midware');
-	midwares.push(cb);
+	
 	return aliez;
 }
-
-module.exports = aliez;
